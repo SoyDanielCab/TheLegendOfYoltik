@@ -172,24 +172,19 @@ Pizza:2976:384
 Pizza:3168:288
 Pizza:3232:64
 
-Pizzaman:3430:255
-Life:3335:270
-Life:3365:270
-Life:3395:270
+Pizzaman:3350:225
+
+
 
 [ennemies]
 Waddledee:192:352
-Waddledee:736:96:-1
-
 Waddledee:928:256
 Waddledee:1312:288
 Waddledee:2784:160
 Waddledee:3072:416
 
-Togezo:384:384
-Togezo:800:416
-Togezo:1632:416
-Togezo:1920:224
-Togezo:2560:416
-Togezo:2752:384
-Togezo:2816:384
+Togezo:384:350
+Togezo:800:400
+Togezo:1632:400
+Togezo:1920:200
+Togezo:2560:400

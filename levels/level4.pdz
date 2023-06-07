@@ -2,7 +2,7 @@
 size:3168
 author:Aldair
 
-Pizzaman:3100:254
+Pizzaman:3080:224
 Brick:3008:288:brick:9
 Brick:3008:320:brick:9
 Brick:2978:320:brick
@@ -43,6 +43,7 @@ Brick:128:320:brick:2
 Brick:160:288:brick
 Brick:256:96:brick:1:9
 Brick:288:96:brick:5
+Brick:445:64:brick:1:2
 Brick:288:352:brick
 Brick:544:0:brick:1:8
 Brick:384:224:brick:6
@@ -104,10 +105,9 @@ Life:2948:36
 
 [ennemies]
 Waddledee:192:352
-Waddledee:320:64:-1
+Waddledee:320:64:
 Waddledee:384:192
 Waddledee:1058:352
 Waddledee:2240:384
 Waddledee:2624:352 
-Togezo:416:64:-1
 Togezo:2368:384

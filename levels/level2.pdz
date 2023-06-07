@@ -98,16 +98,17 @@ Brick:3200:320:brick:4
 Pizza:3204:292
 Brick:3328:320:floor:5
 Brick:3328:352:fullfloor:5:4
-Pizzaman:3332:283
+
+Pizzaman:3360:253
 
 [ennemies]
-Togezo:256:384:-1
-Waddledee:832:96:-1
+Togezo:210:384:-1
+Waddledee:632:96
 Waddledee:960:256
 Trigger:928:"Waddledee":1248:416:-1
-Togezo:1472:160
-Waddledee:1888:128
+Togezo:1445:160 
+Waddledee:1900:128
 Togezo:2240:192
-Waddledee:2432:416
+Waddledee:2550:416
 Trigger:2848:"Waddledee":3100:320:-1
 Trigger:2848:"Waddledee":3296:288:-1

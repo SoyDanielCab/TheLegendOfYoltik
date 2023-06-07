@@ -12,10 +12,10 @@ Life:169:396
 Brick:352:418:brick
 Brick:512:350:brick:5
 Brick:640:318:brick
-Brick:480:340:brick
+Brick:480:318:brick:1:2
 Brick:736:200:brick:2
 Brick:800:110:brick:2
-MadBrick:1056:-18:bad_brick:1:11
+MadBrick:1056:-18:bad_brick:1:10
 MadBrick:960:130:bad_brick:1:9
 Brick:960:450:fullfloor:7
 Brick:960:418:floor:7
@@ -34,10 +34,10 @@ Life:2155:59
 Brick:1520:155:brick:6
 Brick:1520:0:brick:1:5
 Brick:1680:27:brick:1:4
-Pizzaman:1555:118
+Pizzaman:1555:91
 
 [ennemies]
-Waddledee:100:430:-1
-Waddledee:200:430:1
+Waddledee:100:400:1
+Waddledee:200:400:1
 Togezo:1000:400:-1
-Togezo:600:300:1
+Togezo:550:300:1

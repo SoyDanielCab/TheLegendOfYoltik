@@ -3,7 +3,7 @@ from pygame.locals import *
 import os.path
 
 
-SCREENRECT = Rect(0, 0, 640, 480)
+SCREENRECT = Rect(0, 0,640, 480)
 level_font = "PressStart2P-Regular.ttf" #Game font
 level_txt = "Level " #level indicator
 
@@ -111,7 +111,7 @@ def init():
     print("load_config() ended, going on...")
     
     screen = pygame.display.set_mode(SCREENRECT.size, fscreen*FULLSCREEN)
-    pygame.display.set_caption('Legend of Yoltick') 
+    pygame.display.set_caption('Eco Adventure') 
     pygame.mouse.set_visible(0)
     
     print("Going to load music...")

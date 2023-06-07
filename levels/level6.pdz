@@ -53,20 +53,21 @@ MadBrick:5440:288:bad_brick:1:6
 MadBrick:5408:255:bad_brick:2
 
 Brick:5312:448:brick:4
-Pizzaman:5332:413
+Pizzaman:5332:383
 
 [ennemies]
 Waddledee:3490:420
+
+Dafly:1500:100:-1
 Dafly:1700:200:-1
-Dafly:1500:150:-1
 Dafly:2000:260:-1
 Dafly:2300:360:-1
 Dafly:2500:130:-1
 
 Dafly:3000:160:-1
-Dafly:3300:260:-1
+Dafly:3300:230:-1
 Dafly:3530:260:-1
-Dafly:3800:260:-1
+Dafly:3800:290:-1
 Dafly:4000:350:-1
 Dafly:4300:130:-1
 Dafly:4580:380:-1

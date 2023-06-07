@@ -3,7 +3,7 @@ import pygame, sys
 from pygame.locals import *
 from funcs import *
 from menus import *
-
+#linea 840 para elecion de nivel 
 #variables
 SCREENRECT = Rect(0, 0, 640, 480)
 PERSO_SPEED = 5
@@ -19,7 +19,7 @@ lives = 3
 #Max lifes
 maxlives = 5
 
-		 
+
 class Actor(pygame.sprite.Sprite):
     """
     All the sprites classes. 
@@ -106,7 +106,7 @@ class Brick(Actor):
         Actor.__init__(self, posX, posY)
 
 class WeakBrick(Brick):
-  
+
     def __init__(self, posX, posY, image):
         Brick.__init__(self, posX, posY, image)
         self.images = [image, load_image('blank.gif')] # The blank.gif hides the sprite when destroyed.
@@ -149,18 +149,18 @@ class WeakBrick(Brick):
 class Pike(Brick):
     
     def top_touch(self, other):
-        '''
+        '''        
         Spikes kill the player, when touch the top!
-        '''
+        
         if isinstance(other, Player):
             other.die()
-        
+        '''
 
 # fire:
 class MadBrick(Pike):
     '''
     Plyer dies if touch MadBricks of any part
-    '''
+    
 
     def bottom_touch(self, other):
         self.top_touch(other)
@@ -168,7 +168,7 @@ class MadBrick(Pike):
     def side_touch(self, other, side):
         self.top_touch(other)
 
-    
+    '''
 
 class Mover(Brick):
     
@@ -219,9 +219,8 @@ class Pizza(Actor):
         self.pickupsound.play()
         if score%50 == 0 and lives < maxlives:
             lives += 1
-
+            
 class Pizzaman(Actor):
-  
     image = load_image('Warrior.png')
     touchsound = load_sound('end.wav')
 
@@ -252,7 +251,6 @@ class Waddledee(Actor):
         self.image = self.images[0]
 
     def update(self):
-          
         self.rect.move_ip(self.speed*self.direction, 2*self.falling)
         self.falling = 1
         self.frame += 1
@@ -303,10 +301,10 @@ class Togezo(Waddledee):
             self.images.append(pygame.transform.flip(self.images[x], 1, 0))
             self.image = self.images[0]
 
-
+'''
     def top_touch(self, other):
         self.side_touch(other, 0)
-
+'''
 
 class Dafly(Waddledee):
     def __init__(self, posX, posY, startdir = 1):
@@ -467,34 +465,27 @@ class LevelNum(pygame.sprite.Sprite):
             #verse = frs
             self.image = self.font.render(msg, 1, self.color)
 
-
 def directional_image(imlist, dir):
     if dir == 1:
         return imlist[0]
     else:
         return imlist[1]
-
+    
 class Player(Actor):
     """Player"""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self, self.containers)
-
         self.images = load_images(
-
                 'Run1.png','Run2.png',
                 'Run3.png','Run4.png',
                 'Run5.png','Run6.png',
                 'Run7.png','Run8.png',
                 'Run9.png','Run10.png'
             )
-
         for x in range(0, 10):
-           
             self.images.append(pygame.transform.flip(self.images[x], 1, 0))
-
         img = load_image('Jump2.png')
         self.jumpimage = [img, pygame.transform.flip(img, 1, 0)]
-
         img = load_image('Fall.png')
         self.fallimage = [img, pygame.transform.flip(img, 1, 0)]
         
@@ -514,11 +505,10 @@ class Player(Actor):
         self.rect = self.image.get_rect()
         self.rect.centerx = 20
         self.rect.bottom = 400
-
         # Variables de movimiento
         self.jumping = 0
         self.holdjump = 0
-        self.jump_height = 0
+        self.jump_height = -1
         self.falling = 0.5
         self.direction = 1 
         self.cant_move = 0
@@ -735,13 +725,11 @@ def run():
     load_ennemies()
     GAMERECT = Rect(0 , 0, get_level_size(), 480)
     #-------------------------------------------------
-
     game_running = 1
     lives = 3
     maxlives = 5
     score = 0
- 
-   
+    
     player = Player()
     hud = HUD()
 
@@ -755,7 +743,7 @@ def run():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-             sys.exit()
+                sys.exit()
 
 
         pygame.event.pump()
@@ -836,7 +824,8 @@ def load_level_file(num, type):
     global level_size, level_author #level_frs
     try:
         if level_file == "":
-            fstring = os.path.join('levels', 'level'+str(num)+'.pdz')
+            fstring = os.path.join('levels', 'level6.pdz')
+            ##fstring = os.path.join('levels', 'level'+str(num)+'.pdz') 
         else:
             fstring = level_file
         f = open(fstring, 'r')
@@ -852,7 +841,6 @@ def load_level_file(num, type):
                 continue
             if line.startswith('['):
                 break
-
             
             vars = line.rstrip('\n').rstrip('\r').split(':')
             if vars[0] == "":
@@ -866,8 +854,6 @@ def load_level_file(num, type):
                 bFoundAuthor = 1
             #    bFoundFrs = "frs"
                 continue
-
-          
 
             if vars[0] in ("Brick", "WeakBrick", "Pike", "MadBrick"):
                 evalline = "gen_bricks(" + vars[0] + ','
